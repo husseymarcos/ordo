@@ -1,6 +1,5 @@
 "use client";
 
-import { useAuthActions } from "@convex-dev/auth/react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -16,8 +15,7 @@ import {
 } from "@/components/ui/card";
 
 export function LoginPage() {
-  const { signIn } = useAuthActions();
-  const [error, setError] = useState<string | null>(null);
+  const [error] = useState<string | null>(null);
 
   return (
     <div className="flex items-center justify-center min-h-screen">
