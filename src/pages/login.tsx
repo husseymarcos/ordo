@@ -36,9 +36,6 @@ export function LoginPage() {
               e.preventDefault();
               const formData = new FormData(e.target as HTMLFormElement);
               formData.set("flow", "signIn");
-              void signIn("password", formData).catch((error) => {
-                setError(error.message);
-              });
             }}
           >
             <div className="flex flex-col gap-2">

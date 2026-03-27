@@ -40,7 +40,11 @@ export function SignInForm() {
             const formData = new FormData(e.target as HTMLFormElement);
             formData.set("flow", flow);
             void signIn("password", formData).catch((error) => {
-              setError(error.message);
+              if (error.message?.includes("already exists")) {
+                setError("An account with this email already exists");
+              } else {
+                setError(error.message);
+              }
             });
           }}
         >
